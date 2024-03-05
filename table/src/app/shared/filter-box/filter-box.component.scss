@@ -1,0 +1,69 @@
+
+  input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+// input[type=number] {
+//     -moz-appearance: textfield;
+//   }
+.box{
+    padding: 10px;
+  }
+  .fieldData{
+    display: flex;
+flex-direction: column;
+margin-right: 150px;
+  }
+  .flex{
+    display: flex;
+flex-direction: row;
+  }
+  
+ // We need to use ::ng-deep to overcome view encapsulation
+::ng-deep {
+    .custom-slider .ngx-slider .ngx-slider-bar {
+      background:rgb(169, 167, 167);
+      height: 5px;
+    }
+    .custom-slider .ngx-slider .ngx-slider-selection {
+      background: rgb(95, 95, 101);
+    }
+  
+    .custom-slider .ngx-slider .ngx-slider-pointer {
+        width: 7px;
+        height: 7px;
+        top: auto;
+        bottom: 0;
+        background-color: rgb(253, 253, 253);
+        position: absolute;
+        margin: -5px;
+        border: 4px solid rgb(95, 95, 101);
+    }
+   
+    .custom-slider .ngx-slider .ngx-slider-pointer:after {
+      display: none;
+    }
+  
+    .custom-slider .ngx-slider .ngx-slider-bubble {
+      bottom: 14px;
+    }
+  
+    .custom-slider .ngx-slider .ngx-slider-limit {
+      font-weight: bold;
+      color: gray;
+    }
+  
+    .custom-slider .ngx-slider .ngx-slider-tick {
+      width: 1px;
+      height: 15px;
+      margin-left: 4px;
+      border-radius: 0;
+      background: black;
+      top: -1px;
+    }
+  
+    .custom-slider .ngx-slider .ngx-slider-tick.ngx-slider-selected {
+      background: rgb(149, 149, 149);
+    }
+  }

@@ -1,0 +1,36 @@
+<button (click)="openFilter()">Filter</button>
+<button (click)="openDialog()">ADD</button>
+<button (click)="downloadData()">Download Excel</button>
+<div>
+  <h3>Using Button</h3>
+	<input type="button" (click)="downLoad()" value="Download Employee File Data"/>
+</div>
+<table mat-table matSort [dataSource]="dataSource" (matSortChange)="sortDataFunc($event)">
+  <ng-container *ngFor="let col of ColHeader">
+    <ng-container [matColumnDef]="col">
+      <th mat-header-cell *matHeaderCellDef [mat-sort-header]=" col!='Action' ? col : null " [disabled]=" col=='Action' ? true : false " >
+        {{ col }}
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <ng-container *ngIf="col === 'Action'; else elseblk">
+          <button (click)="openDialog(element['_id'])">Edit</button>
+          <button (click)="DeleteField(element['_id'])">Delete</button>
+
+        </ng-container>
+        <ng-template #elseblk>
+          {{ element[col] }}
+        </ng-template>
+      </td>
+    </ng-container>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="ColHeader"></tr>
+  <tr mat-row *matRowDef="let row; columns: ColHeader"></tr>
+</table>
+
+
+<mat-paginator
+  #paginator
+  [pageSizeOptions]="pageSize"
+  [length]="totalRows"
+  showFirstLastButtons
+></mat-paginator>

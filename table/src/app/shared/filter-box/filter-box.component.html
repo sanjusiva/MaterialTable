@@ -1,0 +1,37 @@
+<div class="box">
+<div style="width:50%">
+    <ng-multiselect-dropdown
+        [settings]="dropdownSettings"
+        [data]="dropdownList">
+    </ng-multiselect-dropdown>
+</div>
+<!-- <label cLabel for="customRange1">Example range : <strong>{{value}}</strong></label><br>
+<input [(ngModel)]="value" cFormControl id="customRange1" type="range" style="width: 75%;"/> -->
+
+<!--Normal-->
+<!-- <ngx-slider [(value)]="value" [(highValue)]="maxvalue" [options]="options"></ngx-slider>  
+ -->
+ <!-- With input field -->
+ <div class="container">
+    <div class="custom-slider">
+      <!-- <div> -->
+        <ngx-slider [(value)]="value" [(highValue)]="maxvalue" [options]="options"></ngx-slider>
+      <!-- </div> -->
+    </div>
+    <div class="flex">
+      <div class="fieldData">
+        <div><label for="minValue">Min</label></div>
+        <div><input id="minValue" class="form-control" type="number" name="min" [(ngModel)]="value" /></div>
+      </div><br>
+      <div class="fieldData">
+        <div><label for="maxValue">Max</label></div>
+        <div><input id="maxValue" class="form-control" type="number" name="max" [(ngModel)]="maxvalue" /></div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <label for="example-textarea">Comments</label>
+    <textarea class="form-control" id="example-textarea" row="5"></textarea>
+  </div>
+
+</div>
